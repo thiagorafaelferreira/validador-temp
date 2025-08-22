@@ -15,7 +15,7 @@ public class RegrasCnpj {
 
         // remove qualquer caractere que não seja letra ou número (pontos, barras, traços, espaços)
         String limpo = entrada.replaceAll("[^A-Za-z0-9]", "");
-        limpo = limpo..toUpperCase();
+        limpo = limpo.toUpperCase();
 
         // Deve ter exatamente 14 caracteres (12 base + 2 DVs)
         if (limpo.length() != 14) return false;
