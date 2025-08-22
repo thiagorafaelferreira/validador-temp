@@ -24,7 +24,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Lint / Qualidade (Checkstyle + SpotBugs)
-        run: mvn checkstyle:check spotbugs:check
+        run: mvn checkstyle:check pmd:check spotbugs:check
 
       - name: Rodar Testes Unitários + Cobertura
         run: mvn test jacoco:report
