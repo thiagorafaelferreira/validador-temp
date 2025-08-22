@@ -14,7 +14,8 @@ public class RegrasCnpj {
         if (entrada == null) return false;
 
         // remove qualquer caractere que não seja letra ou número (pontos, barras, traços, espaços)
-        String limpo = entrada.replaceAll("[^A-Za-z0-9]", "").toUpperCase();
+        String limpo = entrada.replaceAll("[^A-Za-z0-9]", "");
+        limpo = limpo..toUpperCase();
 
         // Deve ter exatamente 14 caracteres (12 base + 2 DVs)
         if (limpo.length() != 14) return false;
@@ -77,7 +78,8 @@ public class RegrasCnpj {
     // método auxiliar (útil em logs/debug)
     public static String formatar(String entrada) {
         if (entrada == null) return null;
-        String limpo = entrada.replaceAll("[^A-Za-z0-9]", "").toUpperCase();
+        String limpo = entrada.replaceAll("[^A-Za-z0-9]", "")
+        limpo = limpo.toUpperCase();
         if (limpo.length() != 14) return limpo;
         // ex.: 12ABC34501DE35 -> 12.ABC.345/01DE-35 (apenas exemplo de formatação)
         return String.format("%s.%s.%s/%s-%s",
