@@ -30,5 +30,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Seu token do SonarCloud
         with:
           args: >
-            -Dsonar.projectKey=ferreira-codando_validador-temp
+            -Dsonar.projectKey=thiagorafaelferreira_validador-temp
             -Dsonar.organization=ferreira-codando
