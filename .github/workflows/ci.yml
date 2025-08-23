@@ -31,4 +31,4 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=validador-temp
-            -Dsonar.organization=Thiago Rafael Ferreira
+            -Dsonar.organization=ferreira-codando
