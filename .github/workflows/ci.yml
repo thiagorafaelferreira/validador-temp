@@ -21,7 +21,14 @@ jobs:
           distribution: 'temurin'
 
       - name: Build com Maven
-        run: mvn clean package -DskipTests
+        run: mvn clean verify
 
-      - name: Rodar testes
-        run: mvn test
+      - name: Análise no SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Necessário para PRs
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Seu token do SonarCloud
+        with:
+          args: >
+            -Dsonar.projectKey=validador-temp
+            -Dsonar.organization=Thiago Rafael Ferreira
