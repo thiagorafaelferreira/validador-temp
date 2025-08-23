@@ -78,7 +78,9 @@ public class RegrasCnpj {
     public static String formatar(String entrada) {
         if (entrada == null) return null;
         String limpo = entrada.replaceAll("[^A-Za-z0-9]", "").toUpperCase();
-        if (limpo.length() != 14) return limpo;
+        if (limpo.length() != 14) {
+            return limpo;
+        }
         // ex.: 12ABC34501DE35 -> 12.ABC.345/01DE-35 (apenas exemplo de formatação)
         return String.format("%s.%s.%s/%s-%s",
                 limpo.substring(0,2),
