@@ -22,3 +22,14 @@ jobs:
 
       - name: Build com Maven
         run: mvn clean verify
+
+      - name: Análise no SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Necessário para PRs
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Seu token do SonarCloud
+        with:
+          args: >
+            -Dsonar.projectKey=thiagorafaelferreira_validador-temp
+            -Dsonar.organization=ferreira-codando
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
