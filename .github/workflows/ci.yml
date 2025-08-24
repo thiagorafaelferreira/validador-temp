@@ -31,5 +31,5 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=thiagorafaelferreira_validador-temp
-            -Dsonar.organization=ferreira-codando
+            -Dsonar.organization=thiagorafaelferreira
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
