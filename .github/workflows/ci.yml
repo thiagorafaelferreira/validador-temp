@@ -33,3 +33,4 @@ jobs:
             -Dsonar.projectKey=thiagorafaelferreira_validador-temp
             -Dsonar.organization=thiagorafaelferreira
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+            -Dsonar.java.binaries=target/classes
