@@ -35,3 +35,4 @@ jobs:
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
             -Dsonar.java.binaries=target/classes
             -Dsonar.exclusions=**/model/**,**/repository/**,**/config/**,**/interfaces/**
+            -Dsonar.coverage.exclusions=**/src/test/**/*
