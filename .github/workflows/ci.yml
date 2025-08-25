@@ -34,3 +34,4 @@ jobs:
             -Dsonar.organization=thiagorafaelferreira
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
             -Dsonar.java.binaries=target/classes
+            -Dsonar.exclusions=**/model/**,**/repository/**,**/config/**,**/interfaces/**

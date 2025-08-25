@@ -1,4 +1,4 @@
-package com.projeto.validador.factory;
+package com.projeto.validador.interfaces;
 
 public interface Validador {
 
