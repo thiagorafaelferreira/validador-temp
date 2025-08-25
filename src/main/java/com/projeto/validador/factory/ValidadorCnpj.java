@@ -1,6 +1,7 @@
 package com.projeto.validador.factory;
 
 import com.projeto.validador.domain.RegrasCnpj;
+import com.projeto.validador.interfaces.Validador;
 import org.springframework.stereotype.Component;
 
 @Component
