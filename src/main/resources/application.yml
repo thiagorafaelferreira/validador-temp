@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: validador-temp
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env
+  endpoint:
+    health:
+      show-details: always
