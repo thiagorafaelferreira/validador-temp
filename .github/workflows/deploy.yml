@@ -40,10 +40,7 @@ jobs:
 
       - name: Deploy to Cloud Run
         run: |
-          gcloud builds submit \
-            --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app \
-            --service-account=projects/${{ secrets.GCP_PROJECT_ID }}/serviceAccounts/github-actions@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com \
-            --logging=CLOUD_LOGGING_ONLY
+          gcloud builds submit --config=cloudbuild.yaml
           gcloud run deploy my-app \
             --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app \
             --platform managed \
