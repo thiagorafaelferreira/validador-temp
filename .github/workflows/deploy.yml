@@ -42,11 +42,10 @@ jobs:
         run: |
           gcloud builds submit \
             --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app \
-            --service-account=projects/${{ secrets.GCP_PROJECT_ID }}/serviceAccounts/github-actions@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+            --service-account=projects/${{ secrets.GCP_PROJECT_ID }}/serviceAccounts/github-actions@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com \
+            --logging=CLOUD_LOGGING_ONLY
           gcloud run deploy my-app \
             --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app \
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated
-        env:
-          GOOGLE_CLOUD_PROJECT: ${{ secrets.GCP_PROJECT_ID }}
