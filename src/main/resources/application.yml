@@ -13,9 +13,9 @@ management:
   stackdriver:
     metrics:
       export:
-        projectId: ${GOOGLE_CLOUD_PROJECT}
+        projectId: ${GOOGLE_CLOUD_PROJECT:validador-temp}
   metrics:
     export:
       stackdriver:
         enabled: true
-        project-id: ${GOOGLE_CLOUD_PROJECT}
+        project-id: ${GOOGLE_CLOUD_PROJECT:validador-temp}
