@@ -27,7 +27,7 @@ public class OpenApiConfig {
                                 .url("http://localhost:" + serverPort)
                                 .description("Ambiente Local"),
                         new Server()
-                                .url("https://dev.com")
+                                .url("https://validador-temp-73510068529.us-central1.run.app")
                                 .description("Ambiente de Desenvolvimento"),
                         new Server()
                                 .url("https://prod.com")
