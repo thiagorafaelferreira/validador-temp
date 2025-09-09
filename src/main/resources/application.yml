@@ -10,3 +10,12 @@ management:
   endpoint:
     health:
       show-details: always
+  stackdriver:
+    metrics:
+      export:
+        projectId: ${GOOGLE_CLOUD_PROJECT}
+  metrics:
+    export:
+      stackdriver:
+        enabled: true
+        project-id: ${GOOGLE_CLOUD_PROJECT}

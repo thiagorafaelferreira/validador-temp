@@ -1,9 +1,12 @@
 package com.projeto.validador.factory;
 
+import com.projeto.validador.dto.DocumentoInvalidoException;
 import com.projeto.validador.interfaces.Validador;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
+
+import static java.util.Objects.isNull;
 
 @Component
 public class ValidadorFactory {
@@ -19,13 +22,13 @@ public class ValidadorFactory {
     }
 
     public Validador getValidator(String documento) {
-        if (documento == null) {
-            throw new IllegalArgumentException("Documento não pode ser nulo");
+        if (isNull(documento)) {
+            throw new DocumentoInvalidoException(documento, "Documento não pode ser nulo");
         }
 
         Validador validator = validadores.get(documento.length());
         if (validator == null) {
-            throw new IllegalArgumentException("Tamanho inválido para documento: " + documento.length());
+            throw new DocumentoInvalidoException(documento, "Tamanho inválido para documento: " + documento.length());
         }
 
         return validator;

@@ -1,18 +1,16 @@
 package com.projeto.validador.controller;
 
 import com.projeto.validador.service.ValidadorService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/v1/validar")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ValidadorController {
 
     private final ValidadorService validadorService;
